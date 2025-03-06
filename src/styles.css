@@ -1,1 +1,118 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  /* Colors */
+  --color-blue: #008fec;
+  --color-purple: #9012fe;
+  --color-red: #fc4d64;
+  --color-green: #3ebd41;
+  --color-yellow: #f3ad38;
+  /* Background */
+  --bg-color-light: #e6e8ef;
+  --bg-color-dark: #1a212d;
+  /* Typo */
+  --font-color-light: #f6f7f8;
+  --font-color-dark: #080808;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /*font-size: 62.5%;*/
+}
+
+html.dark {
+  --font-color-dark: var(--font-color-light);
+  --bg-color-light: var(--bg-color--dark);
+}
+
+body {
+  min-height: 100dvh;
+  font-family: var(--font-primary);
+  background-color: var(--bg-light);
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  color: var(--color-dark);
+}
+
+h1 {
+  font-size: clamp(2rem, 1.471830985915493rem + 2.253521126760563vw, 3.5rem); /* 32px - 56px */
+}
+
+h2 {
+  font-size: clamp(1.75rem, 1.3538732394366197rem + 1.6901408450704223vw, 2.875rem); /* 28px - 46px */
+}
+
+h3 {
+  font-size: clamp(1.5rem, 1.1919014084507042rem + 1.3145539906103285vw, 2.375rem); /* 24px - 38px */
+}
+
+h4 {
+  font-size: clamp(1.25rem, 0.9859154929577465rem + 1.1267605633802815vw, 2rem); /* 20px - 32px */
+}
+
+h5 {
+  font-size: clamp(1.125rem, 0.9049295774647887rem + 0.9389671361502347vw, 1.75rem); /* 18px - 28px */
+}
+
+h6 {
+  font-size: clamp(1rem, 0.823943661971831rem + 0.7511737089201878vw, 1.5rem); /* 16px - 24px */
+}
+
+p {
+  text-wrap: pretty;
+  font-size: var(--text-base);
+  color: var(--color-dark);
+  font-size: clamp(0.875rem, 0.7429577464788732rem + 0.5633802816901408vw, 1.25rem); /* 14px - 20px */
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.input {
+  padding: 8px;
+  width: 100%;
+  outline: none;
+  border: 1px solid var(--color-dark);
+  border-radius: var(--rounded-md);
+  transition: all 0.3s ease;
+
+  &:focus {
+    border: 1px solid var(--color-blue-70);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+  }
+
+  &[type="search"]::-webkit-search-cancel-button {
+    display: none; /* Para navegadores basados en WebKit (Chrome, Edge, Safari) */
+  }
+}
+
+/* Utils */
+
+.wrapper {
+  width: min(72rem, calc(100% - 2rem)); /* todo: test 80rem */
+  margin-inline: auto;
+}
